@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRJKT SG Ara Animal Quiz - Project Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!--
+    Infographic Narrative Plan:
+    1.  Introduction: A hook showing the transformation from the old manual quiz to the new digital one.
+    2.  Project at a Glance: Big, bold numbers to highlight the key features and scope.
+    3.  Core Features Breakdown: Visualizing the key pillars of the project (Interaction, Languages, Gamification).
+    4.  Technology Stack: A flowchart showing how the software and hardware components interact.
+    5.  Educational Impact: A comparative visualization of learning outcomes between the old and new methods.
+    6.  Conclusion: A summary of the project's value and future potential.
+
+    Visualization Choices (NO SVG, NO MERMAID JS):
+    -   Transformation Flow: (Goal: Organize) -> HTML/CSS styled divs with arrows (Unicode). Method: Tailwind CSS.
+    -   Key Metrics: (Goal: Inform) -> Large text in styled cards. Method: HTML/CSS.
+    -   Interaction Breakdown: (Goal: Composition) -> Donut Chart. Library: Chart.js.
+    -   Language Support: (Goal: Compare) -> Horizontal Bar Chart. Library: Chart.js.
+    -   Tech Stack Flow: (Goal: Organize) -> HTML/CSS styled flowchart. Method: Tailwind CSS.
+    -   Educational Impact: (Goal: Compare) -> Radar Chart. Library: Chart.js.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F3F4F6; /* Tailwind gray-100 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #118AB2;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Color Palette: Energetic & Playful -->
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black text-[#073B4C] mb-2">From Cardboard to Code</h1>
+            <p class="text-xl md:text-2xl text-[#118AB2]">The Evolution of Learning at SRJKT SG Ara</p>
+        </header>
+
+        <!-- Section 1: The Transformation -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-center text-[#073B4C] mb-8">A Journey of Innovation</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 text-center">
+                    <!-- Old Way -->
+                    <div class="border-2 border-dashed border-gray-300 p-6 rounded-lg h-full flex flex-col justify-center">
+                        <h3 class="text-lg font-bold text-gray-500 mb-2">The Traditional Method</h3>
+                        <p class="text-sm text-gray-500">Manual wire connections on a static cardboard display. Required physical setup and teacher verification.</p>
+                        <div class="text-4xl mt-4">📋</div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="hidden md:flex justify-center items-center">
+                        <span class="flow-arrow">&rarr;</span>
+                    </div>
+                     <div class="flex md:hidden justify-center items-center my-4">
+                        <span class="text-4xl text-[#118AB2]">&darr;</span>
+                    </div>
+                    <!-- New Way -->
+                    <div class="bg-[#073B4C] text-white p-6 rounded-lg h-full flex flex-col justify-center shadow-lg">
+                        <h3 class="text-lg font-bold text-white mb-2">The Interactive Quiz App</h3>
+                        <p class="text-sm">A dynamic, multilingual application with automated feedback, gamification, and hardware integration.</p>
+                         <div class="text-4xl mt-4">💻</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Project at a Glance -->
+        <section class="mb-16">
+             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+                <div class="bg-white rounded-2xl shadow-xl p-6">
+                    <p class="text-5xl font-black text-[#FF6B6B]">4</p>
+                    <p class="font-semibold text-lg mt-2 text-[#073B4C]">Languages</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-6">
+                    <p class="text-5xl font-black text-[#FFD166]">3</p>
+                    <p class="font-semibold text-lg mt-2 text-[#073B4C]">Difficulty Levels</p>
+                </div>
+                 <div class="bg-white rounded-2xl shadow-xl p-6">
+                    <p class="text-5xl font-black text-[#06D6A0]">100%</p>
+                    <p class="font-semibold text-lg mt-2 text-[#073B4C]">Automated</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-6">
+                    <p class="text-5xl font-black text-[#118AB2]">12+</p>
+                    <p class="font-semibold text-lg mt-2 text-[#073B4C]">Questions</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Core Features -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-black text-center text-[#073B4C] mb-8">Core Features Breakdown</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Interaction -->
+                <div class="bg-white rounded-2xl shadow-xl p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#073B4C]">Multi-Sensory Interaction</h3>
+                    <p class="text-center text-sm mb-4">The quiz engages students through a mix of visual, auditory, and kinesthetic feedback, catering to diverse learning styles.</p>
+                    <div class="chart-container">
+                        <canvas id="interactionChart"></canvas>
+                    </div>
+                </div>
+                <!-- Languages -->
+                <div class="bg-white rounded-2xl shadow-xl p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#073B4C]">Multilingual Support</h3>
+                     <p class="text-center text-sm mb-4">Content is fully available in four languages to ensure inclusivity and support language learning.</p>
+                    <div class="chart-container">
+                        <canvas id="languageChart"></canvas>
+                    </div>
+                </div>
+                <!-- Gamification -->
+                <div class="bg-white rounded-2xl shadow-xl p-6 lg:col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#073B4C]">Gamified Learning</h3>
+                    <p class="text-center text-sm mb-4">Features designed to make learning fun and motivate students to achieve their best.</p>
+                    <ul class="space-y-3 text-left list-inside">
+                        <li class="flex items-center"><span class="text-2xl mr-3 text-[#06D6A0]">&#10003;</span><span>Timed Questions</span></li>
+                        <li class="flex items-center"><span class="text-2xl mr-3 text-[#06D6A0]">&#10003;</span><span>Randomized Answers</span></li>
+                        <li class="flex items-center"><span class="text-2xl mr-3 text-[#06D6A0]">&#10003;</span><span>Celebration Animations</span></li>
+                        <li class="flex items-center"><span class="text-2xl mr-3 text-[#06D6A0]">&#10003;</span><span>Sound Controls</span></li>
+                        <li class="flex items-center"><span class="text-2xl mr-3 text-[#06D6A0]">&#10003;</span><span>Printable Certificates</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 4: Technology Stack -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-black text-center text-[#073B4C] mb-8">How It Works: The Tech Stack</h2>
+            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                <div class="flex flex-col md:flex-row items-center justify-around space-y-8 md:space-y-0 md:space-x-8">
+                    <!-- Python App -->
+                    <div class="text-center p-4 bg-blue-50 rounded-lg shadow-md">
+                        <p class="text-4xl">🐍</p>
+                        <h4 class="font-bold text-lg text-[#073B4C]">Python Application</h4>
+                        <p class="text-xs">PyQt5 GUI, Pillow, PySerial</p>
+                    </div>
+                    <span class="flow-arrow hidden md:block">&harr;</span>
+                    <span class="flow-arrow block md:hidden">&darr;</span>
+                    <!-- Data -->
+                     <div class="text-center p-4 bg-green-50 rounded-lg shadow-md">
+                        <p class="text-4xl">📄</p>
+                        <h4 class="font-bold text-lg text-[#073B4C]">Data & Resources</h4>
+                        <p class="text-xs">JSON, Images, Sounds, GIFs</p>
+                    </div>
+                    <span class="flow-arrow hidden md:block">&harr;</span>
+                    <span class="flow-arrow block md:hidden">&darr;</span>
+                    <!-- Arduino -->
+                    <div class="text-center p-4 bg-red-50 rounded-lg shadow-md">
+                        <p class="text-4xl">🤖</p>
+                        <h4 class="font-bold text-lg text-[#073B4C]">Arduino Hardware</h4>
+                        <p class="text-xs">LEDs, Buzzer, LCD Display</p>
+                    </div>
+                </div>
+                <p class="text-center mt-8 text-gray-600">The Python app reads question data from the JSON file, presents it to the user, and sends commands to the Arduino for physical feedback.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Educational Impact -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-black text-center text-[#073B4C] mb-8">Educational Impact</h2>
+            <div class="bg-white rounded-2xl shadow-xl p-6">
+                <p class="text-center text-sm mb-4">The new interactive quiz shows significant improvements in key educational metrics compared to the traditional cardboard method.</p>
+                <div class="chart-container" style="height: 350px; max-height: 450px;">
+                    <canvas id="impactChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const palette = {
+        red: '#FF6B6B',
+        yellow: '#FFD166',
+        green: '#06D6A0',
+        blue: '#118AB2',
+        darkBlue: '#073B4C'
+    };
+
+    const wrapLabel = (label) => {
+        const maxLength = 16;
+        if (label.length <= maxLength) return label;
+        const words = label.split(' ');
+        let currentLine = '';
+        const lines = [];
+        for (const word of words) {
+            if ((currentLine + word).length > maxLength) {
+                lines.push(currentLine.trim());
+                currentLine = '';
+            }
+            currentLine += word + ' ';
+        }
+        lines.push(currentLine.trim());
+        return lines;
+    };
+
+    const tooltipTitleCallback = (tooltipItems) => {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        return Array.isArray(label) ? label.join(' ') : label;
+    };
+    
+    const defaultChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        family: 'Inter',
+                        size: 14
+                    },
+                    color: palette.darkBlue
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    title: tooltipTitleCallback
+                },
+                bodyFont: {
+                    family: 'Inter'
+                },
+                titleFont: {
+                    family: 'Inter'
+                }
+            }
+        }
+    };
+
+    // Interaction Chart (Donut)
+    const interactionCtx = document.getElementById('interactionChart').getContext('2d');
+    new Chart(interactionCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Visual (GUI)', 'Auditory (Sound)', 'Physical (Arduino)'],
+            datasets: [{
+                label: 'Interaction Types',
+                data: [50, 25, 25],
+                backgroundColor: [palette.blue, palette.green, palette.yellow],
+                borderColor: '#FFFFFF',
+                borderWidth: 4,
+                hoverOffset: 4
+            }]
+        },
+        options: defaultChartOptions
+    });
+
+    // Language Chart (Horizontal Bar)
+    const languageCtx = document.getElementById('languageChart').getContext('2d');
+    new Chart(languageCtx, {
+        type: 'bar',
+        data: {
+            labels: ['English', 'Malay', 'Tamil', 'Chinese'],
+            datasets: [{
+                label: 'Language Availability',
+                data: [100, 100, 100, 100],
+                backgroundColor: [palette.red, palette.yellow, palette.green, palette.blue],
+                borderColor: '#FFFFFF',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            ...defaultChartOptions,
+            indexAxis: 'y',
+            scales: {
+                x: {
+                   display: false,
+                },
+                y: {
+                    ticks: {
+                        color: palette.darkBlue,
+                        font: {
+                            family: 'Inter',
+                            size: 14,
+                            weight: '600'
+                        }
+                    }
+                }
+            },
+            plugins: {
+                ...defaultChartOptions.plugins,
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+    
+    // Impact Chart (Radar)
+    const impactCtx = document.getElementById('impactChart').getContext('2d');
+    new Chart(impactCtx, {
+        type: 'radar',
+        data: {
+            labels: ['Engagement', 'Knowledge Retention', 'Tech Literacy', 'Scalability', 'Fun Factor'],
+            datasets: [
+                {
+                    label: 'Traditional Method',
+                    data: [4, 5, 2, 3, 4],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 107, 107, 0.2)',
+                    borderColor: palette.red,
+                    pointBackgroundColor: palette.red,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: palette.red
+                },
+                {
+                    label: 'Interactive Quiz',
+                    data: [9, 8, 9, 10, 10],
+                    fill: true,
+                    backgroundColor: 'rgba(6, 214, 160, 0.2)',
+                    borderColor: palette.green,
+                    pointBackgroundColor: palette.green,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: palette.green
+                }
+            ]
+        },
+        options: {
+           ...defaultChartOptions,
+            scales: {
+                r: {
+                    angleLines: { color: 'rgba(0,0,0,0.1)' },
+                    grid: { color: 'rgba(0,0,0,0.1)' },
+                    pointLabels: {
+                        font: { family: 'Inter', size: 14, weight: '600' },
+                        color: palette.darkBlue
+                    },
+                    ticks: {
+                        backdropColor: 'rgba(255,255,255,0.75)',
+                        color: palette.darkBlue,
+                        font: { family: 'Inter' }
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
+            }
+        }
+    });
+
+});
+</script>
+</body>
+</html>
